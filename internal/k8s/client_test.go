@@ -10,7 +10,6 @@
 package k8s
 
 import (
-	"os"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -19,21 +18,12 @@ import (
 )
 
 func TestInitClientset(t *testing.T) {
-	err := initClientset()
-	assert.Error(t, err, "Init should fail")
-
-	os.Setenv("KUBERNETES_SERVICE_HOST", "localhost")
-	os.Setenv("KUBERNETES_SERVICE_PORT", "65000")
-	err = initClientset()
-	assert.Nil(t, err, "Init should succeed")
+	err := initClientset(nil)
+	assert.Error(t, err, "Init should fail due to missing kubernetes environment variables")
 }
 
 func TestGetClient(t *testing.T) {
-	os.Setenv("KUBERNETES_SERVICE_HOST", "localhost")
-	os.Setenv("KUBERNETES_SERVICE_PORT", "65000")
-	err := initClientset()
-	assert.Nil(t, err, "Init should succeed")
-
+	SetClient(fake.NewSimpleClientset(), types.UID(""))
 	clientset := GetClient()
 	assert.NotNil(t, clientset, "Clientset should be valid")
 }

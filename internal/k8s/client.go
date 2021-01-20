@@ -25,12 +25,17 @@ var (
 	clusterUID types.UID
 )
 
-func initClientset() error {
-	config, err := rest.InClusterConfig()
-	if err != nil {
-		return err
+func initClientset(config *rest.Config) error {
+	if config == nil {
+		// Get in-cluster configuration if one is not provided
+		conf, err := rest.InClusterConfig()
+		if err != nil {
+			return err
+		}
+		config = conf
 	}
 
+	var err error
 	clientset, err = kubernetes.NewForConfig(config)
 	if err != nil {
 		return err
@@ -53,7 +58,7 @@ func Init() error {
 	lock.Lock()
 	defer lock.Unlock()
 
-	err := initClientset()
+	err := initClientset(nil)
 	if err != nil {
 		return err
 	}
