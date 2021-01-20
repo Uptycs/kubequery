@@ -50,6 +50,10 @@ data:
   osquery.conf: |
     {
       "schedule": {
+        "kubernetes_pod_security_policies": {
+          "query": "SELECT uid, cluster_uid, name, privileged, host_pid, host_ipc, host_network, allow_privilege_escalation, value AS 'run_as_user_rule' FROM kubernetes_pod_security_policies, json_tree(kubernetes_pod_security_policies.run_as_user) WHERE key = 'rule'",
+          "interval": 600
+        }
       },
       "options":{
       }

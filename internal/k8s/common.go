@@ -82,7 +82,7 @@ type WindowsOptionsFields struct {
 	WindowsOptionsRunAsUserName          *string
 }
 
-// SeccompProfileFields contains Seccomp profile options as a flat stucture.
+// SeccompProfileFields contains Seccomp profile options as a flat structure.
 type SeccompProfileFields struct {
 	SeccompProfileType             v1.SeccompProfileType
 	SeccompProfileLocalhostProfile *string

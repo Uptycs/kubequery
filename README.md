@@ -1,3 +1,5 @@
+[![Go Report Card](https://goreportcard.com/badge/github.com/Uptycs/kubequery)](https://goreportcard.com/report/github.com/Uptycs/kubequery)
+
 # kubequery powered by Osquery
 
 kubequery is a [Osquery](https://osquery.io) extension that provides SQL based analytics for [Kubernetes](https://kubernetes.io) clusters

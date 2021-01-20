@@ -14,6 +14,7 @@ import (
 	"fmt"
 	"time"
 
+	"github.com/Uptycs/kubequery/internal/k8s"
 	"github.com/Uptycs/kubequery/internal/k8s/admissionregistration"
 	"github.com/Uptycs/kubequery/internal/k8s/apps"
 	"github.com/Uptycs/kubequery/internal/k8s/autoscaling"
@@ -112,6 +113,11 @@ func main() {
 	flag.Parse()
 	if *socket == "" {
 		panic("Missing required --socket argument")
+	}
+
+	err := k8s.Init()
+	if err != nil {
+		panic(err.Error())
 	}
 
 	// TODO: Version and SDK version
