@@ -1,4 +1,4 @@
-[![Go Report Card](https://goreportcard.com/badge/github.com/Uptycs/kubequery)](https://goreportcard.com/report/github.com/Uptycs/kubequery) [![FOSSA Status](https://app.fossa.com/api/projects/custom%2B22616%2Fgit%40github.com%3AUptycs%2Fkubequery.git.svg?type=shield)](https://app.fossa.com/projects/custom%2B22616%2Fgit%40github.com%3AUptycs%2Fkubequery.git?ref=badge_shield)
+[![Go Report Card](https://goreportcard.com/badge/github.com/Uptycs/kubequery)](https://goreportcard.com/report/github.com/Uptycs/kubequery) [![FOSSA Status](https://app.fossa.com/api/projects/custom%2B22616%2Fgit%40github.com%3AUptycs%2Fkubequery.git.svg?type=shield)](https://app.fossa.com/projects/custom%2B22616%2Fgit%40github.com%3AUptycs%2Fkubequery.git?ref=badge_shield) ![CodeQL](https://github.com/Uptycs/kubequery/workflows/CodeQL/badge.svg?branch=master)
 
 # kubequery powered by Osquery
 
@@ -11,9 +11,7 @@ kubequery tables [schema is available here](docs/schema.md)
 
 ## Build
 
-Go 1.15 and make are required to build kubequery. Run:
-
-`make`
+`Go 1.15` and `make` are required to build kubequery. Run: `make`
 
 ## FAQ
 
