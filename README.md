@@ -64,6 +64,33 @@ By default pod resource `requests` and `limits` are set to 500m (half a core) an
 ```sh
 kubectl apply -f kubequery.yaml
 ```
+
+Validate the installation was successful by first executing:
+
+```sh
+kubectl exec -it $(kubectl get pods -n kubequery -o jsonpath='{.items[0].metadata.name}') -- bash -c 'osqueryi --extension /usr/bin/kubequery'
+```
+
+and then running 
+
+```
+.tables kubernetes
+```
+
+Which should produce the following output:
+
+```
+  => kubernetes_api_resources
+  => kubernetes_cluster_role_binding_subjects
+  => kubernetes_cluster_role_policy_rule
+  => kubernetes_config_maps
+  => kubernetes_cron_jobs
+  => kubernetes_csi_drivers
+  => kubernetes_csi_node_drivers
+  => kubernetes_daemon_set_containers
+  ...
+```
+
 ---
 
 ## FAQ
