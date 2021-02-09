@@ -13,7 +13,7 @@ import (
 	"context"
 	"testing"
 
-	"github.com/kolide/osquery-go/plugin/table"
+	"github.com/Uptycs/basequery-go/plugin/table"
 	"github.com/stretchr/testify/assert"
 )
 

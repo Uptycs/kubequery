@@ -10,17 +10,18 @@
 package tables
 
 import (
+	"github.com/Uptycs/basequery-go/plugin/table"
 	"github.com/Uptycs/kubequery/internal/k8s/admissionregistration"
 	"github.com/Uptycs/kubequery/internal/k8s/apps"
 	"github.com/Uptycs/kubequery/internal/k8s/autoscaling"
 	"github.com/Uptycs/kubequery/internal/k8s/batch"
 	"github.com/Uptycs/kubequery/internal/k8s/core"
 	"github.com/Uptycs/kubequery/internal/k8s/discovery"
+	"github.com/Uptycs/kubequery/internal/k8s/event"
 	"github.com/Uptycs/kubequery/internal/k8s/networking"
 	"github.com/Uptycs/kubequery/internal/k8s/policy"
 	"github.com/Uptycs/kubequery/internal/k8s/rbac"
 	"github.com/Uptycs/kubequery/internal/k8s/storage"
-	"github.com/kolide/osquery-go/plugin/table"
 )
 
 // Table structure holds Osquery extension table definition.
@@ -80,6 +81,9 @@ func GetTables() []Table {
 		// Discovery
 		{"kubernetes_api_resources", discovery.APIResourceColumns(), discovery.APIResourcesGenerate},
 		{"kubernetes_info", discovery.InfoColumns(), discovery.InfoGenerate},
+
+		// Event
+		{"kubernetes_events", event.Columns(), event.Generate},
 
 		// Networking
 		{"kubernetes_ingress_classes", networking.IngressClassColumns(), networking.IngressClassesGenerate},

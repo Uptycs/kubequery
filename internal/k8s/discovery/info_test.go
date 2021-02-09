@@ -13,8 +13,8 @@ import (
 	"context"
 	"testing"
 
+	"github.com/Uptycs/basequery-go/plugin/table"
 	"github.com/Uptycs/kubequery/internal/k8s"
-	"github.com/kolide/osquery-go/plugin/table"
 	"github.com/stretchr/testify/assert"
 	"k8s.io/apimachinery/pkg/types"
 	"k8s.io/apimachinery/pkg/version"

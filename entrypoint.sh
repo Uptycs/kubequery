@@ -24,5 +24,8 @@ exec /usr/bin/osqueryd \
     --ephemeral \
     --disable_logging \
     --database_path=/opt/kubequery/osquery.db \
+    --enroll_tables=osquery_info,kubernetes_info \
     --extensions_socket=/opt/kubequery/var/osquery.em \
-    --extensions_autoload=/opt/kubequery/autoload.exts
+    --extensions_autoload=/opt/kubequery/autoload.exts \
+    --extensions_require=kubequery \
+    --extension_event_tables=kubernetes_events

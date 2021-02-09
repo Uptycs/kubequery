@@ -68,10 +68,11 @@ kubectl apply -f kubequery.yaml
 Validate the installation was successful by first executing:
 
 ```sh
-kubectl exec -it $(kubectl get pods -n kubequery -o jsonpath='{.items[0].metadata.name}') -- bash -c 'osqueryi --extension /usr/bin/kubequery'
+kubectl exec -it $(kubectl get pods -n kubequery -o jsonpath='{.items[0].metadata.name}') -- \
+    bash -c 'osqueryi --extension /usr/local/bin/kubequery'
 ```
 
-and then running 
+and then running
 
 ```
 .tables kubernetes
@@ -94,10 +95,6 @@ Which should produce the following output:
 ---
 
 ## FAQ
-
-### Kubernetes events support?
-
-`kubenetes_events` table can be easily implemented in kubequery as traditional table. But ideally it should be a streaming events table similar to `process_events` etc in Osquery. Unfortunately Osquery does not support event tables in extensions currently. Buffering the data in extension and periodically sending it in response to a query is one option, but it is not ideal.
 
 ### Use kubequery instead of Osquery in Kubernetes?
 

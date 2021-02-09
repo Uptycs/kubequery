@@ -19,7 +19,7 @@ test:
 	@go test -race -cover ./...
 
 docker: build
-	@docker build --build-arg KUBEQUERY_VERSION=latest -t uptycs/kubequery:test .
+	@docker build --build-arg KUBEQUERY_VERSION=latest -t uptycs/kubequery:latest .
 
 genschema: build
 	@echo "\`\`\`sql" >  docs/schema.md

@@ -12,7 +12,7 @@ package k8s
 import (
 	"testing"
 
-	"github.com/kolide/osquery-go/plugin/table"
+	"github.com/Uptycs/basequery-go/plugin/table"
 	"github.com/stretchr/testify/assert"
 	v1 "k8s.io/api/core/v1"
 )

@@ -12,8 +12,8 @@ package storage
 import (
 	"context"
 
+	"github.com/Uptycs/basequery-go/plugin/table"
 	"github.com/Uptycs/kubequery/internal/k8s"
-	"github.com/kolide/osquery-go/plugin/table"
 	corev1 "k8s.io/api/core/v1"
 	v1 "k8s.io/api/storage/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"

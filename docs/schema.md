@@ -1802,6 +1802,32 @@ CREATE TABLE kubernetes_info(
     `platform` TEXT
 );
 
+CREATE TABLE kubernetes_events(
+    `time` BIGINT,
+    `event_type` TEXT,
+    `cluster_uid` TEXT,
+    `cluster_name` TEXT,
+    `name` TEXT,
+    `namespace` TEXT,
+    `creation_timestamp` BIGINT,
+    `labels` TEXT,
+    `annotations` TEXT,
+    `reporting_controller` TEXT,
+    `reporting_instance` TEXT,
+    `action` TEXT,
+    `reason` TEXT,
+    `note` TEXT,
+    `type` TEXT,
+    `regarding_kind` TEXT,
+    `regarding_namespace` TEXT,
+    `regarding_name` TEXT,
+    `regarding_uid` TEXT,
+    `related_kind` TEXT,
+    `related_namespace` TEXT,
+    `related_name` TEXT,
+    `related_uid` TEXT
+);
+
 CREATE TABLE kubernetes_ingress_classes(
     `uid` TEXT,
     `cluster_name` TEXT,

@@ -16,8 +16,8 @@ import (
 	"strconv"
 	"strings"
 
+	"github.com/Uptycs/basequery-go/plugin/table"
 	"github.com/iancoleman/strcase"
-	"github.com/kolide/osquery-go/plugin/table"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
